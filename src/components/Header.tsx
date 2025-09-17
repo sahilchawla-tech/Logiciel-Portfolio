@@ -15,9 +15,6 @@ export default function Header() {
                 className="h-10 w-auto"
               />
             </Link>
-            <span className="ml-4 text-secondary hidden md:block">
-              UX/UI Design Portfolio
-            </span>
           </div>
           
           <nav className="hidden md:flex space-x-8">

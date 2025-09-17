@@ -4,6 +4,8 @@ export type ProjectDetail = {
   name: string;
   category: string;
   timeline: string;
+  projectDate: string;
+  focusAreas: string[];
   services: string[];
   summary: string;
   about: string;
@@ -23,6 +25,8 @@ export const projects: ProjectDetail[] = [
     name: 'JobProgress',
     category: 'Enterprise Software',
     timeline: '3 Months',
+    projectDate: 'January 2024 - March 2024',
+    focusAreas: ['Design-Focused', 'User Experience', 'Workflow Optimization'],
     services: ['User Research', 'UI Design', 'Development'],
     summary: 'A Business Management Platform for Home Improvement Contractors.',
     about:
@@ -40,6 +44,8 @@ export const projects: ProjectDetail[] = [
     name: 'RentZeme',
     category: 'Mobile App',
     timeline: '4 Months',
+    projectDate: 'October 2023 - January 2024',
+    focusAreas: ['User Experience', 'Mobile-First Design', 'Property Management'],
     services: ['Product Strategy', 'UI Design', 'Web & Mobile Development'],
     summary: 'A platform to effortlessly apply, sign leases, and manage your property.',
     cardImage: '/project-rentzeme.jpg',
@@ -57,6 +63,8 @@ export const projects: ProjectDetail[] = [
     name: 'Analyst Intelligence',
     category: 'AI & ML',
     timeline: '12 Weeks',
+    projectDate: 'July 2023 - September 2023',
+    focusAreas: ['Data Visualization', 'AI Integration', 'Enterprise UX'],
     services: ['Data UX', 'Design System', 'Engineering'],
     summary: 'A platform to make sophisticated analytical capabilities instantly deployable.',
     about:
@@ -72,6 +80,8 @@ export const projects: ProjectDetail[] = [
     name: 'Power Platform',
     category: 'Enterprise Software',
     timeline: '5 Months',
+    projectDate: 'February 2023 - June 2023',
+    focusAreas: ['Performance Optimization', 'Big Data UX', 'Real-time Analytics'],
     services: ['UX Research', 'Architecture', 'UI Engineering'],
     summary: 'A Big Data platform driving analytics for the Energy sector in the US.',
     about:
@@ -87,6 +97,8 @@ export const projects: ProjectDetail[] = [
     name: 'Travel Buddy',
     category: 'Mobile App',
     timeline: '10 Weeks',
+    projectDate: 'April 2023 - June 2023',
+    focusAreas: ['Mobile UX', 'AI Implementation', 'Travel Experience'],
     services: ['Product Design', 'Prototyping', 'Mobile Development'],
     summary: 'AI powered travel partner with a touch of old travelling experience.',
     about:
@@ -102,6 +114,8 @@ export const projects: ProjectDetail[] = [
     name: 'Adlaunch',
     category: 'AI & ML',
     timeline: '8 Weeks',
+    projectDate: 'August 2023 - September 2023',
+    focusAreas: ['AI/ML Integration', 'Marketing Automation', 'SMB Focus'],
     services: ['Product Strategy', 'UX/UI', 'MVP Engineering'],
     summary: 'AI powered Ads marketing tool for small to medium businesses.',
     about:

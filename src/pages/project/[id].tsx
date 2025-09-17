@@ -57,6 +57,24 @@ export default function ProjectDetailPage() {
               </div>
 
               <div>
+                <div className="text-xs uppercase text-accent mb-2">Project Date</div>
+                <div className="bg-ls-gray-100 rounded-lg p-4 text-secondary">{project.projectDate}</div>
+              </div>
+
+              <div>
+                <div className="text-xs uppercase text-accent mb-2">Focus Areas</div>
+                <div className="bg-ls-gray-100 rounded-lg p-4">
+                  <div className="flex flex-wrap gap-2">
+                    {project.focusAreas.map((area) => (
+                      <span key={area} className="px-3 py-1 text-sm rounded-full bg-white border border-ls-gray-200 text-secondary">
+                        {area}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div>
                 <div className="text-xs uppercase text-accent mb-2">Services we provided</div>
                 <div className="bg-ls-gray-100 rounded-lg p-4">
                   <div className="flex flex-wrap gap-2">
@@ -131,12 +149,126 @@ export default function ProjectDetailPage() {
                 </p>
               </div>
 
-              {/* Our Solutions */}
+              {/* How we convert the problem to the solution */}
               <div>
-                <h2 className="text-3xl font-bold text-secondary mb-6">Our Solutions</h2>
+                <h2 className="text-3xl font-bold text-secondary mb-6">How we convert the problem to the solution</h2>
                 <p className="text-accent text-lg leading-relaxed">
                   {project.solutions || "Solution details coming soon..."}
                 </p>
+              </div>
+
+              {/* Onboarding Experience */}
+              <div className="mt-16">
+                <h2 className="text-3xl font-bold text-secondary mb-8">Onboarding Experience</h2>
+                <div className="space-y-6">
+                  {/* Onboarding Step 1 */}
+                  <div className="relative rounded-xl overflow-hidden border border-ls-gray-200 bg-white p-6">
+                    <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+                      <img
+                        src={`/project-${project.slug}-onboarding1.jpg`}
+                        alt={`${project.name} Onboarding Step 1`}
+                        className="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                        onClick={() => setSelectedImage({
+                          url: `/project-${project.slug}-onboarding1.jpg`,
+                          title: `${project.name} Onboarding Step 1`
+                        })}
+                      />
+                    </div>
+                    <div className="mt-4">
+                      <h3 className="text-xl font-semibold text-secondary">Initial Setup</h3>
+                      <p className="text-accent mt-1">Quick and easy account creation process</p>
+                    </div>
+                  </div>
+
+                  {/* Onboarding Step 2 */}
+                  <div className="relative rounded-xl overflow-hidden border border-ls-gray-200 bg-white p-6">
+                    <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+                      <img
+                        src={`/project-${project.slug}-onboarding2.jpg`}
+                        alt={`${project.name} Onboarding Step 2`}
+                        className="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                        onClick={() => setSelectedImage({
+                          url: `/project-${project.slug}-onboarding2.jpg`,
+                          title: `${project.name} Onboarding Step 2`
+                        })}
+                      />
+                    </div>
+                    <div className="mt-4">
+                      <h3 className="text-xl font-semibold text-secondary">Profile Configuration</h3>
+                      <p className="text-accent mt-1">Customize your workspace preferences</p>
+                    </div>
+                  </div>
+
+                  {/* Onboarding Step 3 */}
+                  <div className="relative rounded-xl overflow-hidden border border-ls-gray-200 bg-white p-6">
+                    <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+                      <img
+                        src={`/project-${project.slug}-onboarding3.jpg`}
+                        alt={`${project.name} Onboarding Step 3`}
+                        className="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                        onClick={() => setSelectedImage({
+                          url: `/project-${project.slug}-onboarding3.jpg`,
+                          title: `${project.name} Onboarding Step 3`
+                        })}
+                      />
+                    </div>
+                    <div className="mt-4">
+                      <h3 className="text-xl font-semibold text-secondary">Ready to Go</h3>
+                      <p className="text-accent mt-1">Start managing your projects efficiently</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Additional Project Images */}
+              <div className="mt-16">
+                <h2 className="text-3xl font-bold text-secondary mb-8">Project Highlights</h2>
+                <div className="space-y-6">
+                  {/* Image 1 */}
+                  <div className="relative rounded-xl overflow-hidden border border-ls-gray-200 bg-white p-6">
+                    <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+                      <img
+                        src={`/project-${project.slug}-highlight1.jpg`}
+                        alt={`${project.name} Highlight 1`}
+                        className="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                        onClick={() => setSelectedImage({
+                          url: `/project-${project.slug}-highlight1.jpg`,
+                          title: `${project.name} Highlight 1`
+                        })}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Image 2 */}
+                  <div className="relative rounded-xl overflow-hidden border border-ls-gray-200 bg-white p-6">
+                    <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+                      <img
+                        src={`/project-${project.slug}-highlight2.jpg`}
+                        alt={`${project.name} Highlight 2`}
+                        className="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                        onClick={() => setSelectedImage({
+                          url: `/project-${project.slug}-highlight2.jpg`,
+                          title: `${project.name} Highlight 2`
+                        })}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Image 3 */}
+                  <div className="relative rounded-xl overflow-hidden border border-ls-gray-200 bg-white p-6">
+                    <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+                      <img
+                        src={`/project-${project.slug}-highlight3.jpg`}
+                        alt={`${project.name} Highlight 3`}
+                        className="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                        onClick={() => setSelectedImage({
+                          url: `/project-${project.slug}-highlight3.jpg`,
+                          title: `${project.name} Highlight 3`
+                        })}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

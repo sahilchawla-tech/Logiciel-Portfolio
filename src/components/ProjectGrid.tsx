@@ -1,14 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 import ProjectPlaceholder from './ProjectPlaceholder';
 
 interface Project {
   id: number;
   name: string;
-  mainGoal: string;
-  categories: string[];
-  imageUrl: string;
+  summary: string;
+  tags: string[];
+  cardImage?: string;
 }
 
 interface ProjectGridProps {
@@ -17,7 +16,7 @@ interface ProjectGridProps {
 
 export default function ProjectGrid({ projects }: ProjectGridProps) {
   return (
-    <section className="py-12">
+    <div className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {projects.length === 0 ? (
           <div className="text-center py-12">
@@ -26,42 +25,49 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in">
             {projects.map((project) => (
               <Link
                 key={project.id}
                 href={`/project/${project.id}`}
-                className="group"
+                className="group animate-slide-up"
               >
-                <article className="bg-white rounded-lg overflow-hidden shadow-lg 
-                  hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                  <div className="relative h-64">
-                    <ProjectPlaceholder 
-                      name={project.name}
-                      className="absolute inset-0 group-hover:scale-105 transition-transform duration-300 ease-in-out"
-                    />
+                <article className="flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ease-out group">
+                  <div className="relative h-[300px] overflow-hidden">
+                    {project.cardImage ? (
+                      <img
+                        src={project.cardImage}
+                        alt={project.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-ls-gray-100 to-ls-gray-200 flex items-center justify-center">
+                        <span className="text-accent">{project.name}</span>
+                      </div>
+                    )}
                   </div>
                   
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-secondary mb-2 
-                      group-hover:text-primary transition-colors">
-                      {project.name}
-                    </h3>
-                    
-                    <p className="text-accent mb-4">
-                      {project.mainGoal}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {project.categories.map((category) => (
-                        <span
-                          key={category}
-                          className="px-3 py-1 text-sm rounded-full bg-ls-gray-100 
-                            text-secondary"
-                        >
-                          {category}
-                        </span>
-                      ))}
+                  <div className="flex flex-col flex-grow p-6">
+                    <div className="mb-4">
+                      <h2 className="text-xl font-semibold text-primary mb-2">
+                        {project.name}
+                      </h2>
+                      <h3 className="text-2xl font-bold text-secondary mb-4">
+                        {project.summary}
+                      </h3>
+                    </div>
+
+                    <div className="mt-auto">
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((category) => (
+                          <span
+                            key={category}
+                            className="px-3 py-1 text-sm rounded-md bg-ls-gray-100 text-secondary whitespace-nowrap"
+                          >
+                            {category}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -70,6 +76,6 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
           </div>
         )}
       </div>
-    </section>
+    </div>
   );
 }

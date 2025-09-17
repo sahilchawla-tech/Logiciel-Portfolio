@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Header() {
@@ -8,13 +7,12 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <Image
+              <img
                 src="/logiciel-logo.png"
                 alt="Logiciel Solutions"
                 width={300}
                 height={60}
                 className="h-10 w-auto"
-                priority
               />
             </Link>
             <span className="ml-4 text-secondary hidden md:block">

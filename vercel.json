@@ -1,0 +1,12 @@
+{
+  "name": "logiciel-portfolio",
+  "version": 2,
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "git": {
+    "deploymentEnabled": {
+      "Update-1-_-Sahil": true
+    }
+  }
+}
